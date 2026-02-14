@@ -327,8 +327,13 @@ body {
   }
   .btn--primary:active {
     background: transparent;
+    box-shadow: none;
     outline: 3px solid var(--clr-green-200);
     outline-offset: 1px;
     color: var(--clr-green-200);
+  }
+
+  .btn--primary:hover {
+    box-shadow: 0 0 6px 2px var(--clr-grey-850) inset;
   }
 }
