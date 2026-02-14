@@ -1,14 +1,4 @@
-@font-face {
-  font-family: "JetBrains";
-  src: url("./assets/fonts/JetBrainsMono-VariableFont_wght.ttf");
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "JetBrains";
-  src: url("./assets/fonts/JetBrainsMono-Italic-VariableFont_wght.ttf");
-  font-style: italic;
-}
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap");
 
 :root {
   --clr-white: hsl(0, 100%, 100%);
@@ -26,7 +16,7 @@
   --clr-red-500: hsl(0, 91%, 63%);
   --clr-gradient: linear-gradient(180deg, hsl(248, 17%, 9%), hsl(255, 22%, 4%));
 
-  --ff-jetbrains: "JetBrains", sans-serif;
+  --ff-jetbrains: "JetBrains Mono", monospace;
 
   --fs-32: 2rem;
   --fs-24: 1.5rem;
