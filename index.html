@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Generate strong and secure passwords instantly with this customizable password generator app. Built with a modern frontend and best security practices."
+    />
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+
+    <title>Password Generator App - Secure & Custom Password Tool</title>
+
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:title"
+      content="Secure Password Generator - Custom & Strong Passwords"
+    />
+    <meta
+      property="og:description"
+      content="Generate strong and secure passwords instantly with this customizable password generator app. Built with a modern frontend and best security practices."
+    />
+    <meta
+      property="og:url"
+      content="https://miwodi-password-generator-app.netlify.app/"
+    />
+    <meta
+      property="og:image"
+      content="https://res.cloudinary.com/dz209s6jk/image/upload/v1661436487/Challenges/pq66aieybewwpo2zlryv.jpg"
+    />
+
+    <script src="./script.js" defer></script>
+  </head>
+
+  <body>
+    <main class="app">
+      <h1 class="app__title">Password Generator</h1>
+
+      <section class="app__password-display display">
+        <p class="display__value">P4$5W0rD!</p>
+        <div class="display__actions actions">
+          <p class="actions__feedback hide-feedback" aria-live="polite">
+            COPIED
+          </p>
+          <button
+            class="actions__copy-btn"
+            aria-label="Copy password to clipboard"
+          >
+            <img src="./assets/images/icon-copy.svg" alt="Copy password" />
+          </button>
+        </div>
+      </section>
+
+      <form class="app__form form" novalidate autocomplete="off">
+        <section class="form__char-length char-length">
+          <div class="char-length__header cl">
+            <h2 class="cl__label" id="char-length-id">Character Length</h2>
+            <p class="cl__value"></p>
+          </div>
+          <input
+            class="char-length__input"
+            type="range"
+            min="0"
+            max="20"
+            step="1"
+            aria-labelledby="char-length-id"
+          />
+        </section>
+
+        <section class="form__options options">
+          <div class="options__option option option--uppercase">
+            <input
+              class="option__checkbox"
+              type="checkbox"
+              id="uppercase"
+              aria-checked="true"
+              checked
+            />
+            <label class="option__label" for="uppercase">
+              Include Uppercase Letters
+            </label>
+          </div>
+
+          <div class="options__option option option--lowercase">
+            <input
+              class="option__checkbox"
+              type="checkbox"
+              id="lowercase"
+              aria-checked="false"
+            />
+            <label class="option__label" for="lowercase">
+              Include Lowercase Letters
+            </label>
+          </div>
+
+          <div class="options__option option option--numbers">
+            <input
+              class="option__checkbox"
+              type="checkbox"
+              id="numbers"
+              aria-checked="false"
+            />
+            <label class="option__label" for="numbers"> Include Numbers </label>
+          </div>
+
+          <div class="options__option option option--symbols">
+            <input
+              class="option__checkbox"
+              type="checkbox"
+              id="symbols"
+              aria-checked="false"
+            />
+            <label class="option__label" for="symbols"> Include Symbols </label>
+          </div>
+        </section>
+
+        <section class="form__strength section-strength">
+          <div class="section-strength__header strength">
+            <p class="strength__label">Strength</p>
+            <div class="strength__value value-strength">
+              <p class="value-strength__text"></p>
+              <div class="value-strength__bars value">
+                <div class="value__bar"></div>
+                <div class="value__bar"></div>
+                <div class="value__bar"></div>
+                <div class="value__bar"></div>
+              </div>
+            </div>
+          </div>
+          <button class="btn btn--primary">
+            Generate
+            <svg
+              class="icon"
+              xmlns="http://www.w3.org/2000/svg"
+              width="12"
+              height="12"
+              viewBox="0 0 12 12"
+            >
+              <path
+                d="m5.106 12 6-6-6-6-1.265 1.265 3.841 3.84H.001v1.79h7.681l-3.841 3.84z"
+                fill="currentColor"
+                stroke="currentColor"
+                stroke-width="0.25"
+              />
+            </svg>
+          </button>
+        </section>
+      </form>
+    </main>
+  </body>
+</html>
