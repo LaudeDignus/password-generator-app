@@ -303,7 +303,7 @@ body {
   cursor: pointer;
 }
 
-.btn--primary:focus {
+.btn--primary:focus-visible {
   background: transparent;
   outline: 3px solid var(--clr-green-200);
   outline-offset: 1px;
@@ -324,5 +324,11 @@ body {
   }
   .app {
     min-width: 33.75rem;
+  }
+  .btn--primary:active {
+    background: transparent;
+    outline: 3px solid var(--clr-green-200);
+    outline-offset: 1px;
+    color: var(--clr-green-200);
   }
 }
