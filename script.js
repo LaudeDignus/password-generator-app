@@ -1,6 +1,7 @@
 const dom = {
   displayValue: document.querySelector(".display__value"),
   copyBtn: document.querySelector(".actions__copy-btn"),
+  feedback: document.querySelector(".actions__feedback"),
   form: document.querySelector(".form"),
   cl: document.querySelector(".cl__value"),
   inputCharLength: document.querySelector(".char-length__input"),
@@ -66,7 +67,10 @@ dom.sectionOptionsCheckbox.addEventListener("input", (e) => {
 
 dom.form.addEventListener("submit", (e) => {
   e.preventDefault();
+  dom.copyBtn.classList.remove("not-allowed");
   calculateStrength();
+  state.password = generatePassword();
+  renderPreview();
   render();
 });
 
@@ -196,7 +200,23 @@ const renderPreview = () => {
   dom.displayValue.classList.add("preview-password");
 };
 
+dom.generateBtn.addEventListener("click", () => {
+  setTimeout(() => {
+    dom.generateBtn.blur();
+  }, 150);
+});
+
+dom.copyBtn.addEventListener("click", () => {
+  if (!state.password || dom.copyBtn.classList.contains("not-allowed")) return;
+  navigator.clipboard.writeText(state.password);
+  dom.feedback.classList.remove("hide-feedback");
+  setTimeout(() => {
+    dom.feedback.classList.add("hide-feedback");
+  }, 500);
+});
+
 const init = () => {
+  dom.copyBtn.classList.add("not-allowed");
   const strength = calculateStrength();
   state.password = generatePassword();
   displayCharLength();
