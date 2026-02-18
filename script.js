@@ -52,8 +52,8 @@ dom.inputCharLength.addEventListener("input", (e) => {
   e.target.style.background = `linear-gradient(
     to right,
     var(--clr-green-200) 0%,
-    var(--clr-green-200) ${(Number(state.charLength) / 20) * 100}%,
-    var(--clr-grey-850) ${(Number(state.charLength) / 20) * 100}%,
+    var(--clr-green-200) ${((Number(state.charLength)-4) / 20) * 100}%,
+    var(--clr-grey-850) ${((Number(state.charLength)-4) / 20) * 100}%,
     var(--clr-grey-850) 100%
   )`;
   displayCharLength();
